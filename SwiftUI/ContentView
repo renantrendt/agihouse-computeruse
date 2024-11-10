@@ -1,0 +1,72 @@
+import SwiftUI
+
+struct ContentView: View {
+    @State private var userInput: String = ""
+    @State private var output: String = ""
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 20) {
+            HStack {
+                Text("Claude")
+                    .font(.title)
+                    .foregroundColor(.black)
+                Spacer()
+            }
+            .padding([.horizontal, .top], 20)
+
+            Text("🌟 Hello!")
+                .font(.largeTitle)
+                .foregroundColor(.black)
+                .padding(.horizontal)
+
+            TextField("How Claude can work for you today?", text: $userInput)
+                .padding()
+                .background(Color(white: 0.95))
+                .cornerRadius(10)
+                .padding(.horizontal)
+
+            HStack {
+                Text("Claude 3.5 Sonnet (New)")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                Spacer()
+                Text("Deactivate Computer Use")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+            }
+            .padding(.horizontal)
+
+            HStack(spacing: 10) {
+                Button("⏱️ Task does not repeat") {}
+                    .font(.caption)
+                    .padding()
+                    .background(Color(white: 0.95))
+                    .cornerRadius(10)
+
+            }
+            .padding(.horizontal)
+
+            Spacer()
+
+            HStack {
+                Text("Your recent tasks")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                Spacer()
+                Text("View all")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+            }
+            .padding(.horizontal)
+        }
+        .padding(.vertical)
+        .background(Color(red: 0.98, green: 0.97, blue: 0.95))
+        .edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
